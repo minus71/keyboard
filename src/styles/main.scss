@@ -1,0 +1,55 @@
+
+@import "./core/base";
+
+.menu{
+    background: red;
+}
+.hidden {
+    display: none;
+}
+
+.gameScreen{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+}
+
+#__app {
+    padding: 24px;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.letter{
+    position: absolute;
+}
+
+.score{
+    font-size: 36px;
+    font-family: monospace;
+    &:before{
+        content: "Score";
+        padding: 1em;
+    }
+}
+
+
+.letter{
+    font-family: monospace;
+    font-size: 24pt;
+    text-transform: uppercase;
+}
+
+
+._hit_letter{
+    font-size: 28pt;
+    font-weight: bold;
+    color: #048040;
+}
+
+._out_letter{
+    font-weight: bold;
+    color: #843010;
+}
