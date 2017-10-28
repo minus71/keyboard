@@ -2,7 +2,9 @@
 @import "./core/base";
 
 .menu{
-    background: red;
+    background: rgba(180,180,180,0.7);
+    position: absolute;
+    top: 0px;
 }
 .hidden {
     display: none;
@@ -32,6 +34,10 @@
     &:before{
         content: "Score";
         padding: 1em;
+    }
+    .score_value{
+        padding-left: 1em;
+        color: indigo;
     }
 }
 

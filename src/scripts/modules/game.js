@@ -71,6 +71,9 @@ class Game{
         this.fallingLetters.forEach(l=>{
             if(l.isOut()){
                 this.stop=true;
+                if(this.triggerEnd){
+                    this.triggerEnd();
+                }
             }
         });
     }
@@ -82,6 +85,17 @@ class Game{
             const speed = this.averageSpeed * ( (Math.random()-0.5) / 4 + 1);
             const letter = new FallingLetter(c,speed,this.gameScreen);
             this.fallingLetters.push(letter);
+        }
+    }
+
+    on(evt, triggerEnd){
+        switch(evt){
+            case "end":{
+                if(triggerEnd){
+                    this.triggerEnd = triggerEnd;
+                }
+            }
+
         }
     }
     
