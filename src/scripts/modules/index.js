@@ -52,6 +52,7 @@ class App {
 		const score = this.game.score;
 		this.lastScore = score;
 		this.highScore = Math.max(score,this.highScore);
+		localStorage.setItem('highscore',this.highScore);
 		this.showScores();
 	}
 }

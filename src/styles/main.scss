@@ -1,10 +1,27 @@
 
 @import "./core/base";
 
+body{
+    background: #101020;
+    color: #eee;
+}
 .menu{
-    background: rgba(180,180,180,0.7);
+    background: rgba(180,180,180,0.9);
     position: absolute;
-    top: 0px;
+    color: black;
+    height: 80vh;
+    width: 80vw;
+    left: 10vw;
+    top: calc(10vw - 48px) ;  
+    button {
+        position: absolute;
+        bottom: calc(50vh - 48px);
+        left: calc(50vw - 200px);
+    }
+    .score {
+        margin-top: 10px;
+        margin-left: 3em;
+    }
 }
 .hidden {
     display: none;
@@ -14,6 +31,7 @@
     position: relative;
     height: 100%;
     width: 100%;
+
     overflow: visible;
 }
 
@@ -31,13 +49,20 @@
 .score{
     font-size: 36px;
     font-family: monospace;
-    &:before{
-        content: "Score";
-        padding: 1em;
-    }
+    display: block;
     .score_value{
+        display: inline;
         padding-left: 1em;
-        color: indigo;
+        color: bisque;
+    }
+}
+.level{
+    font-size: 36px;
+    font-family: monospace;
+    .level_value{
+        display: inline;
+        padding-left: 1em;
+        color: peru;
     }
 }
 
