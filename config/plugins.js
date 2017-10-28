@@ -35,7 +35,7 @@ module.exports = (isProd, options = {}) => {
 		new HtmlPlugin({
 			title: 'Yo',
 			template: join(src,'index.html'),
-			baseUrl: isProd ? '/keyboard/': '/'
+			baseUrl: isProd ? 'https://minus71.github.io/keyboard/': '/'
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendors',
