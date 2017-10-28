@@ -70,15 +70,22 @@ class Game{
         this.scoreWrapper = $('<div class="score">Score</div>');
         this.levelWrapper = $('<div class="level">Level</div>');
 
+        const rateWrapper = $(`<div class="rate">Rate</div>`);
+        this.rateElement=$('<div class="rate_value"></div>');
+        rateWrapper.append(this.rateElement);
+
         this.scoreElement = $('<div class="score_value"></div>');
         this.levelElement = $('<div class="level_value"></div>');
 
         this.gameScreen.html(this.scoreWrapper);
         this.gameScreen.append(this.levelWrapper);
+        this.gameScreen.append(rateWrapper);
         
         this.scoreWrapper.append(this.scoreElement);
         this.levelWrapper.append(this.levelElement);
 
+        this.hits = 0;
+        this.miss = 0;
 
 
         this.score=0;
@@ -108,25 +115,36 @@ class Game{
         window.requestAnimationFrame((t)=>this.step(t));
     }
 
+    updateRate(){
+        const total = this.hits+this.miss;
+        const rate = total ? ((this.hits / total)*100).toFixed(0) :  0;
+        const rateFmt = rate ? rate + '%': 'n/a';
+        this.rateElement.text(rateFmt);
+    }
     checkKey(chr){
         const opt_letter = this.fallingLetters.find(l=>l.char==chr && !l.hitTime);
         if(opt_letter){
             opt_letter.hit();
             this.hit();
+            this.updateRate();
         } else {
             const {next,freq,eta,hit,miss,min} = LEVELS[this.level];
-            
+            this.miss++;
+            this.updateRate();
+            $('#missSound')[0].play();
             this.score-=miss;
             this.scoreElement.text(this.score);
         }
     }
 
     hit(){
+        this.hits++;
         const {next,freq,eta,hit,miss,min} = LEVELS[this.level];
         this.score=this.score+hit;
         this.scoreElement.text(this.score);
         // this.averageSpeed = this.averageSpeed * 1.001;
         // this.genFactor = this.genFactor * 1.03;
+        $('#audio')[0].play();
         if(this.score > next){
            this.level++; 
            this.levelElement.text(this.level);

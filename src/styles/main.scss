@@ -46,22 +46,18 @@ body{
     position: absolute;
 }
 
-.score{
+.score, .level, .rate{
     font-size: 36px;
     font-family: monospace;
     display: block;
-    .score_value{
+    .score_value, .level_value, .rate_value{
         display: inline;
         padding-left: 1em;
         color: bisque;
     }
 }
 .level{
-    font-size: 36px;
-    font-family: monospace;
     .level_value{
-        display: inline;
-        padding-left: 1em;
         color: peru;
     }
 }
