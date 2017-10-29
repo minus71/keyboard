@@ -46,6 +46,12 @@ module.exports = env => {
 					: 'file-loader'
 				},
 				{
+					test: /\.(wav|mp3)$/,
+					use: isProd
+					? 'file-loader?context=src/static/&name=[path][name].[ext]&outputPath=../../dist/'
+					: 'file-loader'
+				},
+				{
 					test: /\.(sass|scss)$/,
 					include: exclude,
 					loader: isProd ? extractTextVendors.extract({
