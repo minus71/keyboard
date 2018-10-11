@@ -15,7 +15,7 @@ const BASE_SET_ITALIAN= 'napolidiqualcheorafalanotiziadiunuomonelnapoletanorimas
                         'hicomuniacaricodeinapoletaniintitolatooradivolarealtoncoppjammejamanoinonsia'+
                         'mocosavrebbeesclamatopivolteluomobevendolasuatazzulellaecafpreparatanellacaf'+
                         'fettieracustoditanellalettaparasoleladevonosmettereconquestipregiudizisuinap'+
-                        'oletani'.split('');
+                        'oletani';
    
 const LEVELS = [
     {
