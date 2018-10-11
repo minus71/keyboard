@@ -16,7 +16,7 @@
     "HMR"
   ],
   "dependencies": {
-    "bootstrap": "4.0.0-alpha.6",
+    "bootstrap": "^4.1.2",
     "jquery": "^3.1.1"
   },
   "devDependencies": {
