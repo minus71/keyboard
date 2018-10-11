@@ -1,6 +1,6 @@
 {
   "name": "keyboard",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": "https://github.com/minus71/keyboard.git",
   "scripts": {
     "dev:validate": "",
